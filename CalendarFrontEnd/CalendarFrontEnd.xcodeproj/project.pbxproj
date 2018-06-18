@@ -7,28 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F229DE820D779E400FC791D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F229DE720D779E400FC791D /* AppDelegate.m */; };
-		0F229DEB20D779E400FC791D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F229DEA20D779E400FC791D /* ViewController.m */; };
 		0F229DEE20D779E400FC791D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F229DEC20D779E400FC791D /* Main.storyboard */; };
 		0F229DF020D779E600FC791D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F229DEF20D779E600FC791D /* Assets.xcassets */; };
 		0F229DF320D779E600FC791D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F229DF120D779E600FC791D /* LaunchScreen.storyboard */; };
-		0F229DF620D779E600FC791D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F229DF520D779E600FC791D /* main.m */; };
-		0F229DFE20D77B9300FC791D /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F229DFD20D77B9300FC791D /* ScheduleViewController.m */; };
+		0F229E0020D845B000FC791D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F229DFF20D845B000FC791D /* AppDelegate.swift */; };
+		0F229E0220D8460600FC791D /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F229E0120D8460600FC791D /* CalendarViewController.swift */; };
+		0F229E0420D8461A00FC791D /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F229E0320D8461A00FC791D /* ScheduleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F229DE320D779E400FC791D /* CalendarFrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarFrontEnd.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F229DE620D779E400FC791D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0F229DE720D779E400FC791D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0F229DE920D779E400FC791D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0F229DEA20D779E400FC791D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0F229DED20D779E400FC791D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F229DEF20D779E600FC791D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F229DF220D779E600FC791D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F229DF420D779E600FC791D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F229DF520D779E600FC791D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0F229DFC20D77B9300FC791D /* ScheduleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
-		0F229DFD20D77B9300FC791D /* ScheduleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
+		0F229DFF20D845B000FC791D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0F229E0120D8460600FC791D /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		0F229E0320D8461A00FC791D /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +56,13 @@
 		0F229DE520D779E400FC791D /* CalendarFrontEnd */ = {
 			isa = PBXGroup;
 			children = (
-				0F229DE620D779E400FC791D /* AppDelegate.h */,
-				0F229DE720D779E400FC791D /* AppDelegate.m */,
-				0F229DE920D779E400FC791D /* ViewController.h */,
-				0F229DEA20D779E400FC791D /* ViewController.m */,
-				0F229DFC20D77B9300FC791D /* ScheduleViewController.h */,
-				0F229DFD20D77B9300FC791D /* ScheduleViewController.m */,
+				0F229DFF20D845B000FC791D /* AppDelegate.swift */,
+				0F229E0120D8460600FC791D /* CalendarViewController.swift */,
+				0F229E0320D8461A00FC791D /* ScheduleViewController.swift */,
 				0F229DEC20D779E400FC791D /* Main.storyboard */,
 				0F229DEF20D779E600FC791D /* Assets.xcassets */,
 				0F229DF120D779E600FC791D /* LaunchScreen.storyboard */,
 				0F229DF420D779E600FC791D /* Info.plist */,
-				0F229DF520D779E600FC791D /* main.m */,
 			);
 			path = CalendarFrontEnd;
 			sourceTree = "<group>";
@@ -107,6 +98,7 @@
 				TargetAttributes = {
 					0F229DE220D779E400FC791D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -146,10 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F229DFE20D77B9300FC791D /* ScheduleViewController.m in Sources */,
-				0F229DEB20D779E400FC791D /* ViewController.m in Sources */,
-				0F229DF620D779E600FC791D /* main.m in Sources */,
-				0F229DE820D779E400FC791D /* AppDelegate.m in Sources */,
+				0F229E0420D8461A00FC791D /* ScheduleViewController.swift in Sources */,
+				0F229E0220D8460600FC791D /* CalendarViewController.swift in Sources */,
+				0F229E0020D845B000FC791D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q3EAA7695;
 				INFOPLIST_FILE = CalendarFrontEnd/Info.plist;
@@ -298,6 +290,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jamestouri.CalendarFrontEnd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -306,6 +300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q3EAA7695;
 				INFOPLIST_FILE = CalendarFrontEnd/Info.plist;
@@ -315,6 +310,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jamestouri.CalendarFrontEnd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
