@@ -13,6 +13,7 @@
 		0F229E0020D845B000FC791D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F229DFF20D845B000FC791D /* AppDelegate.swift */; };
 		0F229E0220D8460600FC791D /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F229E0120D8460600FC791D /* CalendarViewController.swift */; };
 		0F229E0420D8461A00FC791D /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F229E0320D8461A00FC791D /* ScheduleViewController.swift */; };
+		0F229E0620D84FFC00FC791D /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F229E0520D84FFC00FC791D /* ListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0F229DFF20D845B000FC791D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F229E0120D8460600FC791D /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		0F229E0320D8461A00FC791D /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		0F229E0520D84FFC00FC791D /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				0F229DFF20D845B000FC791D /* AppDelegate.swift */,
 				0F229E0120D8460600FC791D /* CalendarViewController.swift */,
 				0F229E0320D8461A00FC791D /* ScheduleViewController.swift */,
+				0F229E0520D84FFC00FC791D /* ListTableViewController.swift */,
 				0F229DEC20D779E400FC791D /* Main.storyboard */,
 				0F229DEF20D779E600FC791D /* Assets.xcassets */,
 				0F229DF120D779E600FC791D /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				0F229E0420D8461A00FC791D /* ScheduleViewController.swift in Sources */,
 				0F229E0220D8460600FC791D /* CalendarViewController.swift in Sources */,
 				0F229E0020D845B000FC791D /* AppDelegate.swift in Sources */,
+				0F229E0620D84FFC00FC791D /* ListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
