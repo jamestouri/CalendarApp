@@ -19,6 +19,12 @@ class ListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        // show on the cells events chronological
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
