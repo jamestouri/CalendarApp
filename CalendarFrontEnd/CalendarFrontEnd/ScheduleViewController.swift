@@ -106,6 +106,7 @@ class ScheduleViewController: UIViewController {
         if endTimePicker.date < timePicker.date {
             errorLabel.isHidden = false
         } else {
+            errorLabel.isHidden = true
             
             let parameters = ["event": eventField.text! as AnyObject,
                               "start_time": startTime.titleLabel?.text as AnyObject,
@@ -117,7 +118,7 @@ class ScheduleViewController: UIViewController {
                 
                 let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
                 
-                let url = NSURL(string: "http://127.0.0.1:5000/api/get_events")!
+                let url = NSURL(string: "http://127.0.0.1:5000/events")!
                 let request = NSMutableURLRequest(url: url as URL)
                 request.httpMethod = "POST"
                 
@@ -131,7 +132,7 @@ class ScheduleViewController: UIViewController {
                     }
                     do {
                         let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
-                        print("Result -> \(result)")
+                        print("Result -> \(result!)")
                         
                     } catch {
                         print("Error -> \(error)")
