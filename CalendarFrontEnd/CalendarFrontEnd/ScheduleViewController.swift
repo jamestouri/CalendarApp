@@ -108,34 +108,32 @@ class ScheduleViewController: UIViewController {
         } else {
             errorLabel.isHidden = true
             
-            let parameters = ["event": eventField.text! as AnyObject,
-                              "start_time": startTime.titleLabel?.text as AnyObject,
-                              "end_time": endTime.titleLabel?.text as AnyObject,
-                              "day": datePressed!,
-                        ] as [String : AnyObject?]
-            
+            let parameters = ["event": eventField.text! as String,
+                              "start_time": startTime.titleLabel?.text as! String,
+                              "end_time": endTime.titleLabel?.text as! String,
+                              "day": datePressed as! String,
+                              ]
             do {
                 
                 let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-                
                 let url = NSURL(string: "http://127.0.0.1:5000/events")!
                 let request = NSMutableURLRequest(url: url as URL)
                 request.httpMethod = "POST"
                 
-                request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 request.httpBody = jsonData
                 
                 let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
                     if error != nil{
-                        print("Error -> \(error)")
+                        print("Error -> \(String(describing: error))")
                         return
                     }
                     do {
-                        let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
-                        print("Result -> \(result!)")
+                        let json = try JSONSerialization.jsonObject(with: (data!), options: .allowFragments) as? [String:AnyObject]
+                        print("Result -> \(String(describing: json!))")
                         
                     } catch {
-                        print("Error -> \(error)")
+                        print("Error at catch -> \(error)")
                     }
                 }
                 

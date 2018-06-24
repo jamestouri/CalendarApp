@@ -1,54 +1,72 @@
-from flask import Flask,request, jsonify, current_app
+from flask import Flask, request, jsonify, current_app
 import flask
-from werkzeug.contrib.cache import SimpleCache
+from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
+import os
 
 
-app = flask.Flask('venv')
 
-class Cache(object):
 
-    cache = SimpleCache(threshold = 1000, default_timeout = 100)
-    # cache = MemcachedCache(servers = ['127.0.0.1:11211'], default_timeout = 100, key_prefix = 'my_prefix_')
+app = Flask('venv')
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'crud.sqlite')
+# app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 
-    @classmethod
-    def get(cls, key = None):
-        return cls.cache.get(key)
+db = SQLAlchemy(app)
+ma = Marshmallow(app)
 
-   
-    @classmethod
-    def set(cls, key = None, value = None, timeout = 0):
-        if timeout:
-            return cls.cache.set(key, value, timeout = timeout)
-        else:    
-            return cls.cache.set(key, value)
 
+
+
+class Event(db.Model):
+	id = db.Column(db.Integer, primary_key = True)
+	event = db.Column(db.String(120))
+	start_time = db.Column(db.String(10))
+	end_time = db.Column(db.String(10))
+	day = db.Column(db.String(2))
+ 
+	def __init__(self, event, start_time, end_time, day):
+		self.event = event
+		self.start_time = start_time
+		self.end_time = end_time
+		self.day = day
+
+class EventSchema(ma.Schema):
+	class Meta:
+		fields = ('event', 'start_time', 'end_time', 'day')
+
+event_schema = EventSchema()
+events_schema = EventSchema(many = True)
 
 
 
 @app.route('/events', methods = ['POST', 'GET'])
 def create_task():
-	counter = 0 
 	if request.method == 'POST':
-	    if not request.json:
-	        abort(400)
+		data = request.get_json(force = True)
+		event = data['event']
+		start_time = data['start_time']
+		end_time = data['end_time']
+		day = data['day']
 
-	    get_events = {
-	        'event': request.json['event'],
-	        'start_time': request.json['start_time'],
-	        'end_time': request.json['end_time'],
-	        'day': request.json['day'],
-	    }
-	    Cache.set(get_events)
-	    counter += 1 
-	    return jsonify({'event': get_events}), 201
+		new_event = Event(event, start_time, end_time, day)
+		result = event_schema.dump(new_event).data
+		db.session.add(new_event)
+		db.session.commit()
+		return jsonify(result)
 	else:
-		if counter == 0:
-			pass
-		else:
-			return jsonify(Cache.get(get_events))
-
-
+		all_users = Event.query.all()
+		result = events_schema.dump(all_users)
+		# Optional line
+		# var = request.form.get('checkbox')
+		return jsonify(result.data)
 
 
 if __name__ == '__main__':
     app.run(debug = True)
+
+
+
+
+
+

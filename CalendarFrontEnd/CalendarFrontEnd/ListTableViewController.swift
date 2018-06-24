@@ -27,7 +27,7 @@ class ListTableViewController: UIViewController {
             guard let data = data, error == nil else { return }
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
                 print(json)
             } catch let error as NSError {
                 print(error)
