@@ -143,6 +143,7 @@ class ScheduleViewController: UIViewController {
             }
             
             self.dismiss(animated: true, completion: nil)
+
         }
         
     }
