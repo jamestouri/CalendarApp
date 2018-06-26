@@ -10,7 +10,6 @@ import os
 app = Flask('venv')
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'crud.sqlite')
-# app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
@@ -57,8 +56,6 @@ def create_task():
 	else:
 		all_users = Event.query.all()
 		result = events_schema.dump(all_users)
-		# Optional line
-		# var = request.form.get('checkbox')
 		return jsonify(result.data)
 
 

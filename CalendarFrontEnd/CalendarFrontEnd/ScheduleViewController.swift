@@ -102,7 +102,7 @@ class ScheduleViewController: UIViewController {
         givenTime.pmSymbol = "pm"
         endTime.setTitle(givenTime.string(from: endTimePicker.date), for: .normal)
 
-        
+        // Making sure times chosen is possible
         if endTimePicker.date < timePicker.date {
             errorLabel.isHidden = false
         } else {
@@ -114,7 +114,7 @@ class ScheduleViewController: UIViewController {
                               "day": datePressed as! String,
                               ]
             do {
-                
+                // POST Method to store in database
                 let jsonData = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
                 let url = NSURL(string: "http://127.0.0.1:5000/events")!
                 let request = NSMutableURLRequest(url: url as URL)
